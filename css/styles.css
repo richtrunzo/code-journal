@@ -3,7 +3,51 @@ header > h3 {
   background-color: #6ea4e6;
   margin-top: 0;
   padding-bottom: 50px;
-  padding-left: 50px;
+  padding-left: 250px;
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
+  width: 100%;
+}
+
+.top-form {
+  display: flex;
+  justify-content: center;
+}
+
+.form-right {
+  margin-right: 200px;
+  margin-left: 20px;
+  margin-top: 130px;
+}
+
+.image-submit {
+  margin-right: 0;
+}
+
+.image-submit > h3 {
+  font-size: 40px;
+}
+
+.image-placeholder {
+  width: 500px;
+}
+
+.text-input {
+  width: 250%;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.text-label {
+  font-size: 22px;
+}
+
+textarea {
+  width: 180%;
+}
+
+.submit-button {
+  width: 180%;
+  display: flex;
+  justify-content: flex-end;
 }
