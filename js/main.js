@@ -6,3 +6,9 @@ $avatarInput.addEventListener('input', function (event) {
   $imagePlaceholder.src = $avatarValue;
 
 });
+
+var $form = document.querySelector('form');
+
+$form.addEventListener('submit', function (event) {
+
+});
