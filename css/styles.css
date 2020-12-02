@@ -73,6 +73,14 @@ textarea {
   border-radius: 5%;
 }
 
+/* View */
+
+.hidden {
+  display: none;
+}
+
+/* Profile */
+
 @media screen and (max-width: 1220px) {
   .text-input {
     width: 150%;

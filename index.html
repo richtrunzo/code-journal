@@ -18,63 +18,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h3>Code Journal</h3>
-  </header>
-  <form>
-   <div class="container">
-    <div class="row-one">
-      <div class="col-one-row-one">
-       <h3>Edit Profile</h3>
-       <label for="img-input">
-         <img class="image-placeholder" src="images/placeholder-image-square.jpg" alt="Profile Picture">
-       </label>
-       <input type="file" id="img-input" class="file" alt="profile" name="image">
-      </div>
-      <div class="col-two-row-one">
-        <div>
-          <label class="text-label" for="url">Avatar URL</label>
-        </div>
-        <div>
-          <input class="text-input avatar" type="url" id="url" name="url" required>
-        </div>
-        <div>
-          <label class="text-label" for="username">Username</label>
-        </div>
-        <div>
-          <input class="text-input username" type="text" id="username" name="username" required>
-        </div>
-        <div>
-          <label class="text-label" for="full-name">Full Name</label>
-        </div>
-        <div>
-          <input class="text-input full-name" type="text" id="full-name" name="name" required>
-        </div>
-        <div>
-          <label class="text-label" for="location">Location</label>
-        </div>
-        <div>
-          <input class="text-input location" type="text" id="location" name="location" required>
-        </div>
-      </div>
-    </div>
-    <div class="row-two">
-     <div>
-      <div>
-       <label class="text-label" for="bio">Bio</label>
-      </div>
-      <div>
-       <textarea id="bio" class="bio" name="bio" rows="10" required></textarea>
-      </div>
-     </div>
-      <div class="button">
-       <button class="submit">SAVE</button>
-      </div>
-    </div>
-  </div>
-  </form>
   <main>
-    <div data-view="edit-profile"></div>
+    <div data-view="edit-profile" class="view hidden">
+      <header>
+       <h3>Code Journal</h3>
+      </header>
+    <form>
+      <div class="container">
+        <div class="row-one">
+          <div class="col-one-row-one">
+            <h3>Edit Profile</h3>
+            <label for="img-input">
+              <img class="image-placeholder" src="images/placeholder-image-square.jpg" alt="Profile Picture">
+            </label>
+            <input type="file" id="img-input" class="file" alt="profile" name="image">
+          </div>
+          <div class="col-two-row-one">
+            <div>
+              <label class="text-label" for="url">Avatar URL</label>
+            </div>
+            <div>
+              <input class="text-input avatar" type="url" id="url" name="url" required>
+            </div>
+            <div>
+              <label class="text-label" for="username">Username</label>
+            </div>
+            <div>
+              <input class="text-input username" type="text" id="username" name="username" required>
+            </div>
+            <div>
+              <label class="text-label" for="full-name">Full Name</label>
+            </div>
+            <div>
+              <input class="text-input full-name" type="text" id="full-name" name="name" required>
+            </div>
+            <div>
+              <label class="text-label" for="location">Location</label>
+            </div>
+            <div>
+              <input class="text-input location" type="text" id="location" name="location" required>
+            </div>
+          </div>
+        </div>
+        <div class="row-two">
+          <div>
+            <div>
+              <label class="text-label" for="bio">Bio</label>
+            </div>
+            <div>
+              <textarea id="bio" class="bio" name="bio" rows="10" required></textarea>
+            </div>
+          </div>
+          <div class="button">
+            <button class="submit">SAVE</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
