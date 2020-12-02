@@ -26,32 +26,35 @@
     <div class="row-one">
       <div class="col-one-row-one">
        <h3>Edit Profile</h3>
-       <input type="image" class="image-placeholder" src="images/placeholder-image-square.jpg" alt="Submit your profile picture" required>
+       <label for="img-input">
+         <img class="image-placeholder" src="images/placeholder-image-square.jpg" alt="Profile Picture">
+       </label>
+       <input type="file" id="img-input" class="file" alt="profile">
       </div>
       <div class="col-two-row-one">
         <div>
           <label class="text-label" for="url">Avatar URL</label>
         </div>
         <div>
-          <input class="text-input" type="text" name="url" required>
+          <input class="text-input" type="text" id="url" required>
         </div>
         <div>
           <label class="text-label" for="username">Username</label>
         </div>
         <div>
-          <input class="text-input" type="text" name="username" required>
+          <input class="text-input" type="text" id="username" required>
         </div>
         <div>
           <label class="text-label" for="full-name">Full Name</label>
         </div>
         <div>
-          <input class="text-input" type="text" name="full-name" required>
+          <input class="text-input" type="text" id="full-name" required>
         </div>
         <div>
           <label class="text-label" for="location">Location</label>
         </div>
         <div>
-          <input class="text-input" type="text" name="location" required>
+          <input class="text-input" type="text" id="location" required>
         </div>
       </div>
     </div>
@@ -61,7 +64,7 @@
        <label class="text-label" for="bio">Bio</label>
       </div>
       <div>
-       <textarea name="bio" rows="10" required></textarea>
+       <textarea id="bio" rows="10" required></textarea>
       </div>
      </div>
       <div class="button">

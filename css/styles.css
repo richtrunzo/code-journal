@@ -30,7 +30,7 @@ header > h3 {
   font-family: 'Raleway', sans-serif;
 }
 
-.col-one-row-one > .image-placeholder {
+.image-placeholder {
   width: 100%;
 }
 
@@ -41,6 +41,10 @@ header > h3 {
 .text-label {
   font-size: 22px;
   font-family: 'Raleway', sans-serif;
+}
+
+.file {
+  display: none;
 }
 
 .text-input {
