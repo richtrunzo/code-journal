@@ -31,7 +31,8 @@ header > h3 {
 }
 
 .image-placeholder {
-  width: 100%;
+  width: 670px;
+  height: 670px;
 }
 
 .col-two-row-one {
@@ -113,5 +114,19 @@ textarea {
 
   header > h3 {
     padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .image-placeholder {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image-placeholder {
+    width: 280px;
+    height: 280px;
   }
 }
