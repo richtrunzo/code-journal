@@ -14,7 +14,6 @@ var $location = document.querySelector('.location');
 var $bio = document.querySelector('.bio');
 
 $form.addEventListener('submit', function (event) {
-  event.preventDefault();
   data.profile.username = $username.value;
   data.profile.fullName = $fullName.value;
   data.profile.location = $location.value;

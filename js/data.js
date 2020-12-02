@@ -11,3 +11,13 @@ var data = {
   },
   entries: []
 };
+
+var previousData = localStorage.getItem('user-information');
+if (previousData !== null) {
+  data = JSON.parse(previousData);
+}
+
+window.addEventListener('beforeunload', function (event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('user-information', dataJSON);
+});
