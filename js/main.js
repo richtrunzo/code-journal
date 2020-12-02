@@ -20,5 +20,5 @@ $form.addEventListener('submit', function (event) {
   data.profile.location = $location.value;
   data.profile.avatarUrl = $avatarInput.value;
   data.profile.bio = $bio.value;
-
+  $form.reset();
 });
