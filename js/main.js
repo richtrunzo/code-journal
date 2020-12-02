@@ -21,4 +21,5 @@ $form.addEventListener('submit', function (event) {
   data.profile.avatarUrl = $avatarInput.value;
   data.profile.bio = $bio.value;
   $form.reset();
+  $imagePlaceholder.src = 'images/placeholder-image-square.jpg';
 });
