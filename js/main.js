@@ -110,3 +110,7 @@ function viewSwap(event) {
 }
 
 viewSwap();
+
+document.addEventListener('DOMContentLoaded', function (event) {
+
+});
