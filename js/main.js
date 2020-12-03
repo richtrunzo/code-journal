@@ -101,16 +101,21 @@ var $body = document.querySelector('body');
 function viewSwap(event) {
   if ($view[0].getAttribute('data-view') === event) {
     $view[0].className = 'view';
-  } else {
+    $view[1].className = 'view hidden';
+  } else if ($view[1].getAttribute('data-view') === event) {
     $view[0].className = 'view hidden';
+    $view[1].className = 'view hidden';
     $body.appendChild(profileRender());
   }
   data.view = event;
 
 }
 
-viewSwap();
-
 document.addEventListener('DOMContentLoaded', function (event) {
+  if (data.profile.username === 'username') {
+    viewSwap('edit-profile');
+  } else {
+    viewSwap('profile');
+  }
 
 });
