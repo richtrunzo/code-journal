@@ -25,6 +25,8 @@ $form.addEventListener('submit', function (event) {
 
 function profileRender(event) {
   var profile = document.createElement('div');
+  profile.setAttribute('class', 'view');
+  profile.setAttribute('data-view', 'profile');
   var header = document.createElement('header');
   profile.appendChild(header);
   var codeJournal = document.createElement('h3');
@@ -91,9 +93,9 @@ function profileRender(event) {
 
   return profile;
 }
-profileRender();
 
 var $view = document.querySelectorAll('.view');
+var $body = document.querySelector('body');
 
 function viewSwap(event) {
   if ($view[0].getAttribute('data-view') === event) {
@@ -103,8 +105,10 @@ function viewSwap(event) {
     $view[1].className = 'view';
     $view[0].className = 'view hidden';
     $view[1].innerHTML = '';
+    $body.appendChild(profileRender());
   }
   data.view = event;
+
 }
 
 viewSwap();
