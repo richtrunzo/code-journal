@@ -21,6 +21,7 @@ $form.addEventListener('submit', function (event) {
   data.profile.bio = $bio.value;
   $form.reset();
   $imagePlaceholder.src = 'images/placeholder-image-square.jpg';
+  viewSwap('profile');
 });
 
 function profileRender(event) {
@@ -100,11 +101,8 @@ var $body = document.querySelector('body');
 function viewSwap(event) {
   if ($view[0].getAttribute('data-view') === event) {
     $view[0].className = 'view';
-    $view[1].className = 'view hidden';
-  } else if ($view[1].getAttribute('data-view') === event) {
-    $view[1].className = 'view';
+  } else {
     $view[0].className = 'view hidden';
-    $view[1].innerHTML = '';
     $body.appendChild(profileRender());
   }
   data.view = event;
