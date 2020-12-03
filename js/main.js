@@ -93,6 +93,7 @@ function viewSwap(event) {
     $view[1].className = 'view';
     $view[0].className = 'view hidden';
   }
+  data.view = event;
 }
 
 viewSwap();
