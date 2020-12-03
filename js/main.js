@@ -92,6 +92,17 @@ function profileRender(event) {
   bioText.appendChild(bioTextGraf);
   profileBio.appendChild(bioText);
 
+  var button = document.createElement('button');
+  var link = document.createElement('a');
+  var linkText = document.createTextNode('EDIT');
+  link.appendChild(linkText);
+  link.setAttribute('data-view', 'edit-profile');
+  link.setAttribute('href', '#');
+  link.setAttribute('class', 'edit-button');
+  button.setAttribute('class', 'edit-button');
+  button.appendChild(link);
+  colTwo.appendChild(button);
+
   return profile;
 }
 
