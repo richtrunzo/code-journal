@@ -104,7 +104,7 @@ function viewSwap(event) {
     $view[1].className = 'view hidden';
   } else if ($view[1].getAttribute('data-view') === event) {
     $view[0].className = 'view hidden';
-    $view[1].className = 'view hidden';
+    $view[1].className = 'view';
     $body.appendChild(profileRender());
   }
   data.view = event;
@@ -117,5 +117,4 @@ document.addEventListener('DOMContentLoaded', function (event) {
   } else {
     viewSwap('profile');
   }
-
 });
