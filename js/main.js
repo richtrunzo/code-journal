@@ -96,19 +96,22 @@ function profileRender(event) {
 }
 
 var $view = document.querySelectorAll('.view');
-var $body = document.querySelector('body');
 
 function viewSwap(event) {
   if ($view[0].getAttribute('data-view') === event) {
     $view[0].className = 'view';
     $view[1].className = 'view hidden';
+    $username.value = data.profile.username;
+    $fullName.value = data.profile.fullName;
+    $imagePlaceholder.src = data.profile.avatarUrl;
+    $location.value = data.profile.location;
+    $bio.value = data.profile.bio;
   } else if ($view[1].getAttribute('data-view') === event) {
     $view[0].className = 'view hidden';
     $view[1].className = 'view';
-    $body.appendChild(profileRender());
+    $view[1].appendChild(profileRender(data));
   }
   data.view = event;
-
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
