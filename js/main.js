@@ -81,5 +81,18 @@ function profileData(event) {
 
   return profile;
 }
-
 profileData();
+
+var $view = document.querySelectorAll('.view');
+
+function viewSwap(event) {
+  if ($view[0].getAttribute('data-view') === event) {
+    $view[0].className = 'view';
+    $view[1].className = 'view hidden';
+  } else if ($view[1].getAttribute('data-view') === event) {
+    $view[1].className = 'view';
+    $view[0].className = 'view hidden';
+  }
+}
+
+viewSwap();
