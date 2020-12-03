@@ -23,7 +23,7 @@ $form.addEventListener('submit', function (event) {
   $imagePlaceholder.src = 'images/placeholder-image-square.jpg';
 });
 
-function profileData(event) {
+function profileRender(event) {
   var profile = document.createElement('div');
   var header = document.createElement('header');
   profile.appendChild(header);
@@ -40,11 +40,14 @@ function profileData(event) {
 
   var profileName = document.createElement('h3');
   profileName.setAttribute('class', 'profile-header');
+  var profileNameText = document.createTextNode(data.profile.fullName);
+  profileName.appendChild(profileNameText);
 
   colOne.appendChild(profileName);
 
   var image = document.createElement('img');
   image.setAttribute('class', 'image-placeholder profileimage');
+  image.src = data.profile.avatarUrl;
 
   colOne.appendChild(image);
   var colTwo = document.createElement('div');
@@ -53,12 +56,15 @@ function profileData(event) {
 
   var profileUser = document.createElement('div');
   profileUser.setAttribute('class', 'profileuser');
+
   colTwo.appendChild(profileUser);
   var userIcon = document.createElement('i');
   userIcon.setAttribute('class', 'far fa-user');
   profileUser.appendChild(userIcon);
 
   var username = document.createElement('p');
+  var usernameText = document.createTextNode(data.profile.username);
+  username.appendChild(usernameText);
   profileUser.appendChild(username);
 
   var profileLocation = document.createElement('div');
@@ -70,6 +76,8 @@ function profileData(event) {
   profileLocation.appendChild(locationIcon);
 
   var locationName = document.createElement('p');
+  var locationNameText = document.createTextNode(data.profile.location);
+  locationName.appendChild(locationNameText);
   profileLocation.appendChild(locationName);
 
   var profileBio = document.createElement('div');
@@ -77,11 +85,13 @@ function profileData(event) {
   colTwo.appendChild(profileBio);
 
   var bioText = document.createElement('p');
+  var bioTextGraf = document.createTextNode(data.profile.bio);
+  bioText.appendChild(bioTextGraf);
   profileBio.appendChild(bioText);
 
   return profile;
 }
-profileData();
+profileRender();
 
 var $view = document.querySelectorAll('.view');
 
@@ -92,6 +102,7 @@ function viewSwap(event) {
   } else if ($view[1].getAttribute('data-view') === event) {
     $view[1].className = 'view';
     $view[0].className = 'view hidden';
+    $view[1].innerHTML = '';
   }
   data.view = event;
 }
