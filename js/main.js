@@ -190,3 +190,32 @@ $formEntry.addEventListener('submit', function (event) {
   $formEntry.reset();
   viewSwap('entries');
 });
+
+function entryRender(entry) {
+  var entryContainer = document.createElement('div');
+  var orderedList = document.createElement('ol');
+  entryContainer.appendChild(orderedList);
+  var list = document.createElement('li');
+  list.setAttribute('class', 'list');
+  orderedList.appendChild(list);
+  var listImage = document.createElement('img');
+  listImage.setAttribute('class', 'note-entry-image');
+  listImage.setAttribute('src', data.entries[data.entries.length - 1].entryImage);
+  listImage.setAttribute('alt', 'note-entry');
+  list.appendChild(listImage);
+  var listContent = document.createElement('div');
+  listContent.setAttribute('class', 'note-content');
+  list.appendChild(listContent);
+  var listHeader = document.createElement('h3');
+  var listHeaderContent = document.createTextNode(data.entries[data.entries.length - 1].entryTitle);
+  listHeader.appendChild(listHeaderContent);
+  listContent.appendChild(listHeader);
+  var listGraf = document.createElement('p');
+  var listGrafContent = document.createTextNode(data.entries[data.entries.length - 1].notes);
+  listGraf.appendChild(listGrafContent);
+  listContent.appendChild(listGraf);
+
+  return entryContainer;
+}
+
+entryRender();
