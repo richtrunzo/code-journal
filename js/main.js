@@ -185,4 +185,5 @@ $formEntry.addEventListener('submit', function (event) {
   entryData.entryImage = $entryImageInput.value;
   entryData.entryTitle = $titleInput.value;
   entryData.notes = $notes.value;
+  data.entries.push(entryData);
 });
