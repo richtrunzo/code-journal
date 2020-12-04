@@ -132,3 +132,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
     viewSwap('profile');
   }
 });
+
+var $link = document.getElementsByTagName('a');
+
+document.addEventListener('click', function (event) {
+  for (var i = 0; i < $link.length; i++) {
+    if (event.target !== $link[i]) {
+      return;
+    } else if (event.target === $link[i]) {
+      viewSwap($link[i].getAttribute('data-view'));
+    }
+  }
+});
