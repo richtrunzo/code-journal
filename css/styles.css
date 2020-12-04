@@ -251,7 +251,7 @@ textarea {
   }
 
   .entry-row-two-col-one {
-    margin-left: 20px;
+    margin-left: 40px;
     width: 100%;
   }
 
@@ -282,6 +282,26 @@ textarea {
   .image-placeholder {
     width: 280px;
     height: 280px;
+  }
+
+  .col-one-entry {
+    margin-left: 20px;
+  }
+
+  .entry-row-two-col-one {
+    margin-left: 20px;
+  }
+
+  .entry-title {
+    margin-left: 20px;
+  }
+
+  .entry-button-create {
+    margin-left: 20px;
+  }
+
+  .entry-button {
+    margin-right: 60px;
   }
 
   header > h3 {
