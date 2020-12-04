@@ -195,4 +195,12 @@ textarea {
     width: 280px;
     height: 280px;
   }
+
+  header > h3 {
+    font-size: 14px;
+  }
+
+  header > a {
+    font-size: 12px;
+  }
 }
