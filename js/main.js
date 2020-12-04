@@ -139,15 +139,7 @@ var $link = document.getElementsByTagName('a');
 document.addEventListener('click', function (event) {
   if (event.target === $link[0] && $view[1].className !== 'view' && data.profile.username !== 'username') {
     viewSwap('profile');
-  } else if (event.target === $link[1]) {
+  } else if (event.target === $link[2]) {
     viewSwap('edit-profile');
   }
 });
-
-// for (var i = 0; i < $link.length; i++) {
-//   if (event.target !== $link[i]) {
-//     return;
-//   } else if (event.target === $link[i]) {
-//     viewSwap($link[i].getAttribute('data-view'));
-//   }
-// }
