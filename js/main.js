@@ -28,12 +28,12 @@ function profileRender(view) {
   var profile = document.createElement('div');
   profile.setAttribute('class', 'view');
   profile.setAttribute('data-view', 'profile');
-  var header = document.createElement('header');
-  profile.appendChild(header);
-  var codeJournal = document.createElement('h3');
-  var codeJournalText = document.createTextNode('Code Journal');
-  codeJournal.appendChild(codeJournalText);
-  header.appendChild(codeJournal);
+  // var header = document.createElement('header');
+  // profile.appendChild(header);
+  // var codeJournal = document.createElement('h3');
+  // var codeJournalText = document.createTextNode('Code Journal');
+  // codeJournal.appendChild(codeJournalText);
+  // header.appendChild(codeJournal);
   var rowOne = document.createElement('div');
   rowOne.setAttribute('class', 'row-one row-one-profile');
   profile.appendChild(rowOne);
@@ -112,15 +112,16 @@ function viewSwap(view) {
   if ($view[0].getAttribute('data-view') === view) {
     $view[0].className = 'view';
     $view[1].className = 'view hidden';
+    $view[1].innerHTML = '';
+  } else if ($view[1].getAttribute('data-view') === view) {
+    $view[0].className = 'view hidden';
+    $view[1].className = 'view';
+    $view[1].appendChild(profileRender(data));
     $username.value = data.profile.username;
     $fullName.value = data.profile.fullName;
     $imagePlaceholder.src = data.profile.avatarUrl;
     $location.value = data.profile.location;
     $bio.value = data.profile.bio;
-  } else if ($view[1].getAttribute('data-view') === view) {
-    $view[0].className = 'view hidden';
-    $view[1].className = 'view';
-    $view[1].appendChild(profileRender(data));
   }
   data.view = event;
 }
@@ -136,11 +137,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
 var $link = document.getElementsByTagName('a');
 
 document.addEventListener('click', function (event) {
-  for (var i = 0; i < $link.length; i++) {
-    if (event.target !== $link[i]) {
-      return;
-    } else if (event.target === $link[i]) {
-      viewSwap($link[i].getAttribute('data-view'));
-    }
+  if (event.target === $link[0] && $view[1].className !== 'view') {
+    viewSwap('profile');
+  } else if (event.target === $link[1]) {
+    viewSwap('edit-profile');
   }
 });
+
+// for (var i = 0; i < $link.length; i++) {
+//   if (event.target !== $link[i]) {
+//     return;
+//   } else if (event.target === $link[i]) {
+//     viewSwap($link[i].getAttribute('data-view'));
+//   }
+// }

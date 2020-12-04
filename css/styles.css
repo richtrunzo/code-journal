@@ -1,12 +1,19 @@
-header > h3 {
-  padding-top: 50px;
+header {
+  display: flex;
+  align-items: center;
   background-color: #6ea4e6;
-  margin-top: 0;
-  padding-bottom: 50px;
-  padding-left: 250px;
+}
+
+header > h3 {
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
-  width: 150%;
+}
+
+header > a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  margin-left: 20px;
+  color: black;
 }
 
 .edit-row-one {
