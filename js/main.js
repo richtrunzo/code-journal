@@ -173,7 +173,16 @@ $entryImageInput.addEventListener('input', function (event) {
 // var $entrySave = document.querySelector('.entry-save');
 
 var $formEntry = document.querySelector('.form-two');
+var $titleInput = document.querySelector('.title-input');
+var $notes = document.querySelector('.notes-text');
 
 $formEntry.addEventListener('submit', function (event) {
-
+  var entryData = {
+    entryImage: 'image-url',
+    entryTitle: 'entry-title',
+    notes: 'notes'
+  };
+  entryData.entryImage = $entryImageInput.value;
+  entryData.entryTitle = $titleInput.value;
+  entryData.notes = $notes.value;
 });
