@@ -22,9 +22,10 @@
     <header>
      <h3>Code Journal</h3>
       <a href="#" data-view="profile">Profile</a>
+      <a href="#" data-view="entries">Entries</a>
     </header>
-    <div data-view="edit-profile" class="view">
-    <form>
+    <div data-view="edit-profile" class="view edit-profile">
+    <form class="form-one">
       <div class="container">
         <div class="row-one edit-row-one">
           <div class="col-one-row-one">
@@ -77,9 +78,57 @@
       </div>
     </form>
   </div>
-  <div data-view="profile" class="view hidden">
-
+  <div data-view="profile" class="view hidden profile"></div>
+  <div data-view="entries" class="view hidden entries">
+  <div class="entries-row">
+    <div>
+      <h3 class="entry-title">Entries</h3>
+    </div>
+    <div>
+      <button class="entry-button-create"><a class="create-button" href="#" data-view="create-entry">NEW</a></button>
+    </div>
   </div>
+  </div>
+  <div data-view="create-entry" class="view hidden create-entry">
+  <form class="form-two">
+    <div class="entry-container">
+      <div class="entry-row-one row-one">
+        <div class="col-one-entry">
+          <h3>New Entry</h3>
+          <img class="image-placeholder entry-image" src="images/placeholder-image-square.jpg" alt="Entry Image">
+        </div>
+        <div class="col-two-entry">
+          <div>
+            <label class="entry-label" for="image-url">Image URL</label>
+          </div>
+          <div>
+            <input class="entry-input text-input entry-image-input" type="text" id="image-url" required>
+          </div>
+          <div>
+            <label class="entry-label" for="entry-title">Title</label>
+          </div>
+          <div>
+            <input class="entry-input text-input title-input" type="text" id="entry-title" required>
+          </div>
+        </div>
+      </div>
+      <div class="entry-row-two">
+        <div class="entry-row-two-col-one">
+          <div>
+            <label class="notes-label" for="notes">Notes</label>
+          </div>
+          <div>
+            <textarea class="notes-text" id="notes" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="entry-button">
+          <button class="entry-save">SAVE</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

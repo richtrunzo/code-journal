@@ -7,7 +7,7 @@ $avatarInput.addEventListener('input', function (event) {
 
 });
 
-var $form = document.querySelector('form');
+var $form = document.querySelector('.form-one');
 var $username = document.querySelector('.username');
 var $fullName = document.querySelector('.full-name');
 var $location = document.querySelector('.location');
@@ -113,15 +113,31 @@ function viewSwap(view) {
     $view[0].className = 'view';
     $view[1].className = 'view hidden';
     $view[1].innerHTML = '';
+    $view[2].className = 'view hidden';
+    $view[3].className = 'view hidden create-entry';
   } else if ($view[1].getAttribute('data-view') === view) {
     $view[0].className = 'view hidden';
     $view[1].className = 'view';
+    $view[2].className = 'view hidden';
+    $view[3].className = 'view hidden create-entry';
     $view[1].appendChild(profileRender(data));
     $username.value = data.profile.username;
     $fullName.value = data.profile.fullName;
     $imagePlaceholder.src = data.profile.avatarUrl;
     $location.value = data.profile.location;
     $bio.value = data.profile.bio;
+  } else if ($view[2].getAttribute('data-view') === view) {
+    $view[0].className = 'view hidden';
+    $view[1].className = 'view hidden';
+    $view[1].innerHTML = '';
+    $view[2].className = 'view';
+    $view[3].className = 'view hidden create-entry';
+  } else if ($view[3].getAttribute('data-view') === view) {
+    $view[0].className = 'view hidden';
+    $view[1].className = 'view hidden';
+    $view[1].innerHTML = '';
+    $view[2].className = 'view hidden';
+    $view[3].className = 'view create-entry';
   }
   data.view = event;
 }
@@ -139,15 +155,38 @@ var $link = document.getElementsByTagName('a');
 document.addEventListener('click', function (event) {
   if (event.target === $link[0] && $view[1].className !== 'view' && data.profile.username !== 'username') {
     viewSwap('profile');
-  } else if (event.target === $link[1]) {
+  } else if (event.target === $link[2] && event.target.className !== 'create-button') {
     viewSwap('edit-profile');
-  }
+  } else if (event.target === $link[1] && data.profile.username !== 'username') {
+    viewSwap('entries');
+  } else if (event.target === $link[2] && event.target.className === 'create-button') { viewSwap('create-entry'); }
 });
 
-// for (var i = 0; i < $link.length; i++) {
-//   if (event.target !== $link[i]) {
-//     return;
-//   } else if (event.target === $link[i]) {
-//     viewSwap($link[i].getAttribute('data-view'));
-//   }
-// }
+var $entryImageInput = document.querySelector('.entry-image-input');
+var $entryImage = document.querySelector('.entry-image');
+
+$entryImageInput.addEventListener('input', function (event) {
+  var $entryValue = $entryImageInput.value;
+  $entryImage.src = $entryValue;
+});
+
+// var $entrySave = document.querySelector('.entry-save');
+
+var $formEntry = document.querySelector('.form-two');
+var $titleInput = document.querySelector('.title-input');
+var $notes = document.querySelector('.notes-text');
+
+$formEntry.addEventListener('submit', function (event) {
+  var entryData = {
+    entryImage: 'image-url',
+    entryTitle: 'entry-title',
+    notes: 'notes'
+  };
+  entryData.entryImage = $entryImageInput.value;
+  entryData.entryTitle = $titleInput.value;
+  entryData.notes = $notes.value;
+  data.entries.push(entryData);
+  $entryImage.src = 'images/placeholder-image-square.jpg';
+  $formEntry.reset();
+  viewSwap('entries');
+});

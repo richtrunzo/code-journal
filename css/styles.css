@@ -137,9 +137,88 @@ textarea {
   text-decoration: none;
 }
 
+.entry-row-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-one-entry > h3 {
+  font-size: 40px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.col-two-entry {
+  margin-left: 20px;
+}
+
+.entry-label {
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.entry-input {
+  width: 200%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 80px;
+}
+
+.entry-row-two-col-one {
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 520px;
+}
+
+.notes-label {
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.entry-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 300px;
+}
+
+.entry-save {
+  font-family: 'Raleway', sans-serif;
+  padding: 5px 10px 5px 10px;
+  margin-top: 10px;
+  border-radius: 5%;
+}
+
+.entries-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.entry-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 200px;
+}
+
+.entry-button-create {
+  font-family: 'Raleway', sans-serif;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5%;
+  margin-right: 200px;
+  color: black;
+}
+
 @media screen and (max-width: 1550px) {
   .row-one-profile {
     margin-left: 200px;
+  }
+
+  .entry-row-two-col-one {
+    margin-left: 250px;
   }
 }
 
@@ -150,6 +229,10 @@ textarea {
 
   .text-input {
     width: 150%;
+  }
+
+  .entry-row-two-col-one {
+    margin-left: 200px;
   }
 
   textarea {
@@ -165,6 +248,11 @@ textarea {
   .text-input {
     width: 90%;
     margin-bottom: 10px;
+  }
+
+  .entry-row-two-col-one {
+    margin-left: 40px;
+    width: 100%;
   }
 
   textarea {
@@ -194,6 +282,26 @@ textarea {
   .image-placeholder {
     width: 280px;
     height: 280px;
+  }
+
+  .col-one-entry {
+    margin-left: 20px;
+  }
+
+  .entry-row-two-col-one {
+    margin-left: 20px;
+  }
+
+  .entry-title {
+    margin-left: 20px;
+  }
+
+  .entry-button-create {
+    margin-left: 20px;
+  }
+
+  .entry-button {
+    margin-right: 60px;
   }
 
   header > h3 {
