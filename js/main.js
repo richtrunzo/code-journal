@@ -113,15 +113,21 @@ function viewSwap(view) {
     $view[0].className = 'view';
     $view[1].className = 'view hidden';
     $view[1].innerHTML = '';
+    $view[2].className = 'view hidden';
   } else if ($view[1].getAttribute('data-view') === view) {
     $view[0].className = 'view hidden';
     $view[1].className = 'view';
+    $view[2].className = 'view hidden';
     $view[1].appendChild(profileRender(data));
     $username.value = data.profile.username;
     $fullName.value = data.profile.fullName;
     $imagePlaceholder.src = data.profile.avatarUrl;
     $location.value = data.profile.location;
     $bio.value = data.profile.bio;
+  } else if ($view[2].getAttribute('data-view') === view) {
+    $view[0].className = 'view hidden';
+    $view[1].className = 'view hidden';
+    $view[2].className = 'view';
   }
   data.view = event;
 }
@@ -141,5 +147,7 @@ document.addEventListener('click', function (event) {
     viewSwap('profile');
   } else if (event.target === $link[2]) {
     viewSwap('edit-profile');
+  } else if (event.target === $link[1] && data.profile.username !== 'username') {
+    viewSwap('entries');
   }
 });
