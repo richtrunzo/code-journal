@@ -186,4 +186,5 @@ $formEntry.addEventListener('submit', function (event) {
   entryData.entryTitle = $titleInput.value;
   entryData.notes = $notes.value;
   data.entries.push(entryData);
+  $entryImage.src = 'images/placeholder-image-square.jpg';
 });
