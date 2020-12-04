@@ -24,16 +24,16 @@ $form.addEventListener('submit', function (event) {
   viewSwap('profile');
 });
 
-function profileRender(event) {
+function profileRender(view) {
   var profile = document.createElement('div');
   profile.setAttribute('class', 'view');
   profile.setAttribute('data-view', 'profile');
-  var header = document.createElement('header');
-  profile.appendChild(header);
-  var codeJournal = document.createElement('h3');
-  var codeJournalText = document.createTextNode('Code Journal');
-  codeJournal.appendChild(codeJournalText);
-  header.appendChild(codeJournal);
+  // var header = document.createElement('header');
+  // profile.appendChild(header);
+  // var codeJournal = document.createElement('h3');
+  // var codeJournalText = document.createTextNode('Code Journal');
+  // codeJournal.appendChild(codeJournalText);
+  // header.appendChild(codeJournal);
   var rowOne = document.createElement('div');
   rowOne.setAttribute('class', 'row-one row-one-profile');
   profile.appendChild(rowOne);
@@ -92,23 +92,38 @@ function profileRender(event) {
   bioText.appendChild(bioTextGraf);
   profileBio.appendChild(bioText);
 
+  var button = document.createElement('button');
+  var link = document.createElement('a');
+  var linkText = document.createTextNode('EDIT');
+  link.appendChild(linkText);
+  link.setAttribute('data-view', 'edit-profile');
+  link.setAttribute('href', '#');
+  link.setAttribute('class', 'edit-button');
+  button.setAttribute('class', 'edit-button');
+  button.appendChild(link);
+  colTwo.appendChild(button);
+
   return profile;
 }
 
 var $view = document.querySelectorAll('.view');
-var $body = document.querySelector('body');
 
-function viewSwap(event) {
-  if ($view[0].getAttribute('data-view') === event) {
+function viewSwap(view) {
+  if ($view[0].getAttribute('data-view') === view) {
     $view[0].className = 'view';
     $view[1].className = 'view hidden';
-  } else if ($view[1].getAttribute('data-view') === event) {
+    $view[1].innerHTML = '';
+  } else if ($view[1].getAttribute('data-view') === view) {
     $view[0].className = 'view hidden';
     $view[1].className = 'view';
-    $body.appendChild(profileRender());
+    $view[1].appendChild(profileRender(data));
+    $username.value = data.profile.username;
+    $fullName.value = data.profile.fullName;
+    $imagePlaceholder.src = data.profile.avatarUrl;
+    $location.value = data.profile.location;
+    $bio.value = data.profile.bio;
   }
   data.view = event;
-
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
@@ -118,3 +133,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
     viewSwap('profile');
   }
 });
+
+var $link = document.getElementsByTagName('a');
+
+document.addEventListener('click', function (event) {
+  if (event.target === $link[0] && $view[1].className !== 'view' && data.profile.username !== 'username') {
+    viewSwap('profile');
+  } else if (event.target === $link[1]) {
+    viewSwap('edit-profile');
+  }
+});
+
+// for (var i = 0; i < $link.length; i++) {
+//   if (event.target !== $link[i]) {
+//     return;
+//   } else if (event.target === $link[i]) {
+//     viewSwap($link[i].getAttribute('data-view'));
+//   }
+// }
