@@ -24,7 +24,7 @@ $form.addEventListener('submit', function (event) {
   viewSwap('profile');
 });
 
-function profileRender(event) {
+function profileRender(view) {
   var profile = document.createElement('div');
   profile.setAttribute('class', 'view');
   profile.setAttribute('data-view', 'profile');
@@ -108,8 +108,8 @@ function profileRender(event) {
 
 var $view = document.querySelectorAll('.view');
 
-function viewSwap(event) {
-  if ($view[0].getAttribute('data-view') === event) {
+function viewSwap(view) {
+  if ($view[0].getAttribute('data-view') === view) {
     $view[0].className = 'view';
     $view[1].className = 'view hidden';
     $username.value = data.profile.username;
@@ -117,7 +117,7 @@ function viewSwap(event) {
     $imagePlaceholder.src = data.profile.avatarUrl;
     $location.value = data.profile.location;
     $bio.value = data.profile.bio;
-  } else if ($view[1].getAttribute('data-view') === event) {
+  } else if ($view[1].getAttribute('data-view') === view) {
     $view[0].className = 'view hidden';
     $view[1].className = 'view';
     $view[1].appendChild(profileRender(data));
