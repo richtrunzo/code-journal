@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 var $link = document.getElementsByTagName('a');
 
 document.addEventListener('click', function (event) {
-  if (event.target === $link[0] && $view[1].className !== 'view') {
+  if (event.target === $link[0] && $view[1].className !== 'view' && data.profile.username !== 'username') {
     viewSwap('profile');
   } else if (event.target === $link[1]) {
     viewSwap('edit-profile');
