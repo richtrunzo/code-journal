@@ -188,4 +188,5 @@ $formEntry.addEventListener('submit', function (event) {
   data.entries.push(entryData);
   $entryImage.src = 'images/placeholder-image-square.jpg';
   $formEntry.reset();
+  viewSwap('entries');
 });
