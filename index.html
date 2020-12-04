@@ -80,7 +80,7 @@
   </div>
   <div data-view="profile" class="view hidden profile"></div>
   <div data-view="entries" class="view hidden entries"></div>
-  <div data-view="create-entry" class="view create-entry">
+  <div data-view="create-entry" class="view hidden create-entry">
   <form>
     <div class="entry-container">
       <div class="entry-row-one row-one">
@@ -93,13 +93,13 @@
             <label class="entry-label" for="image-url">Image URL</label>
           </div>
           <div>
-            <input class="entry-input text-input" type="text" id="image-url">
+            <input class="entry-input text-input" type="text" id="image-url" required>
           </div>
           <div>
             <label class="entry-label" for="entry-title">Title</label>
           </div>
           <div>
-            <input class="entry-input text-input" type="text" id="entry-title">
+            <input class="entry-input text-input" type="text" id="entry-title" required>
           </div>
         </div>
       </div>
