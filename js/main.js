@@ -114,10 +114,12 @@ function viewSwap(view) {
     $view[1].className = 'view hidden';
     $view[1].innerHTML = '';
     $view[2].className = 'view hidden';
+    $view[3].className = 'view hidden create-entry';
   } else if ($view[1].getAttribute('data-view') === view) {
     $view[0].className = 'view hidden';
     $view[1].className = 'view';
     $view[2].className = 'view hidden';
+    $view[3].className = 'view hidden create-entry';
     $view[1].appendChild(profileRender(data));
     $username.value = data.profile.username;
     $fullName.value = data.profile.fullName;
@@ -127,7 +129,15 @@ function viewSwap(view) {
   } else if ($view[2].getAttribute('data-view') === view) {
     $view[0].className = 'view hidden';
     $view[1].className = 'view hidden';
+    $view[1].innerHTML = '';
     $view[2].className = 'view';
+    $view[3].className = 'view hidden create-entry';
+  } else if ($view[3].getAttribute('data-view') === view) {
+    $view[0].className = 'view hidden';
+    $view[1].className = 'view hidden';
+    $view[1].innerHTML = '';
+    $view[2].className = 'view hidden';
+    $view[3].className = 'view create-entry';
   }
   data.view = event;
 }
@@ -145,9 +155,9 @@ var $link = document.getElementsByTagName('a');
 document.addEventListener('click', function (event) {
   if (event.target === $link[0] && $view[1].className !== 'view' && data.profile.username !== 'username') {
     viewSwap('profile');
-  } else if (event.target === $link[2]) {
+  } else if (event.target === $link[2] && event.target.className !== 'create-button') {
     viewSwap('edit-profile');
   } else if (event.target === $link[1] && data.profile.username !== 'username') {
     viewSwap('entries');
-  }
+  } else if (event.target === $link[2] && event.target.className === 'create-button') { viewSwap('create-entry'); }
 });

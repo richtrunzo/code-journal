@@ -191,6 +191,27 @@ textarea {
   border-radius: 5%;
 }
 
+.entries-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.entry-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 200px;
+}
+
+.entry-button-create {
+  font-family: 'Raleway', sans-serif;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5%;
+  margin-right: 200px;
+  color: black;
+}
+
 @media screen and (max-width: 1550px) {
   .row-one-profile {
     margin-left: 200px;
