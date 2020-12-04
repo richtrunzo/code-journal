@@ -7,7 +7,7 @@ $avatarInput.addEventListener('input', function (event) {
 
 });
 
-var $form = document.querySelector('form');
+var $form = document.querySelector('.form-one');
 var $username = document.querySelector('.username');
 var $fullName = document.querySelector('.full-name');
 var $location = document.querySelector('.location');
@@ -168,4 +168,12 @@ var $entryImage = document.querySelector('.entry-image');
 $entryImageInput.addEventListener('input', function (event) {
   var $entryValue = $entryImageInput.value;
   $entryImage.src = $entryValue;
+});
+
+// var $entrySave = document.querySelector('.entry-save');
+
+var $formEntry = document.querySelector('.form-two');
+
+$formEntry.addEventListener('submit', function (event) {
+
 });
