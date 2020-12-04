@@ -137,6 +137,47 @@ textarea {
   text-decoration: none;
 }
 
+.entry-row-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-one-entry > h3 {
+  font-size: 40px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.col-one-entry > img {
+  width: 670px;
+  height: 670px;
+}
+
+.col-two-entry {
+  margin-left: 20px;
+}
+
+.entry-label {
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.entry-input {
+  width: 200%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 80px;
+}
+
+
+/* .entry-row-two-col-one {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+} */
+
 @media screen and (max-width: 1550px) {
   .row-one-profile {
     margin-left: 200px;

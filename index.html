@@ -80,7 +80,43 @@
   </div>
   <div data-view="profile" class="view hidden profile"></div>
   <div data-view="entries" class="view hidden entries"></div>
-  <div data-view="create-entry" class="view hidden create-entry"></div>
+  <div data-view="create-entry" class="view create-entry">
+    <div class="entry-container">
+      <div class="entry-row-one">
+        <div class="col-one-entry">
+          <h3>New Entry</h3>
+          <img src="images/placeholder-image-square.jpg" alt="Entry Image">
+        </div>
+        <div class="col-two-entry">
+          <div>
+            <label class="entry-label" for="image-url">Image URL</label>
+          </div>
+          <div>
+            <input class="entry-input" type="text" id="image-url">
+          </div>
+          <div>
+            <label class="entry-label" for="entry-title">Title</label>
+          </div>
+          <div>
+            <input class="entry-input" type="text" id="entry-title">
+          </div>
+        </div>
+      </div>
+      <div class="entry-row-two">
+        <div class="entry-row-two-col-one">
+          <div>
+            <label class="notes-label" for="notes">Notes</label>
+          </div>
+          <div>
+            <textarea id="notes" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="entry-button">
+          <button class="entry-save">SAVE</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
