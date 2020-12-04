@@ -161,3 +161,11 @@ document.addEventListener('click', function (event) {
     viewSwap('entries');
   } else if (event.target === $link[2] && event.target.className === 'create-button') { viewSwap('create-entry'); }
 });
+
+var $entryImageInput = document.querySelector('.entry-image-input');
+var $entryImage = document.querySelector('.entry-image');
+
+$entryImageInput.addEventListener('input', function (event) {
+  var $entryValue = $entryImageInput.value;
+  $entryImage.src = $entryValue;
+});
