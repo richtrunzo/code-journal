@@ -28,12 +28,6 @@ function profileRender(view) {
   var profile = document.createElement('div');
   profile.setAttribute('class', 'view');
   profile.setAttribute('data-view', 'profile');
-  // var header = document.createElement('header');
-  // profile.appendChild(header);
-  // var codeJournal = document.createElement('h3');
-  // var codeJournalText = document.createTextNode('Code Journal');
-  // codeJournal.appendChild(codeJournalText);
-  // header.appendChild(codeJournal);
   var rowOne = document.createElement('div');
   rowOne.setAttribute('class', 'row-one row-one-profile');
   profile.appendChild(rowOne);
@@ -159,7 +153,11 @@ document.addEventListener('click', function (event) {
     viewSwap('edit-profile');
   } else if (event.target === $link[1] && data.profile.username !== 'username') {
     viewSwap('entries');
-  } else if (event.target === $link[2] && event.target.className === 'create-button') { viewSwap('create-entry'); }
+  } else if (event.target === $link[2] && event.target.className === 'create-button') {
+    viewSwap('create-entry');
+  } else if (event.target === $link[3]) {
+    viewSwap('entries');
+  }
 });
 
 var $entryImageInput = document.querySelector('.entry-image-input');
@@ -190,3 +188,69 @@ $formEntry.addEventListener('submit', function (event) {
   $formEntry.reset();
   viewSwap('entries');
 });
+
+function entryRender(entry) {
+  var entryContainer = document.createElement('div');
+  var orderedList = document.createElement('ol');
+  entryContainer.appendChild(orderedList);
+  var list = document.createElement('li');
+  list.setAttribute('class', 'list');
+  orderedList.appendChild(list);
+  var listImage = document.createElement('img');
+  listImage.setAttribute('class', 'note-entry-image');
+  listImage.setAttribute('src', data.entries[entry].entryImage);
+  listImage.setAttribute('alt', 'note-entry');
+  list.appendChild(listImage);
+  var listContent = document.createElement('div');
+  listContent.setAttribute('class', 'note-content');
+  list.appendChild(listContent);
+  var listHeader = document.createElement('h3');
+  var listHeaderContent = document.createTextNode(data.entries[entry].entryTitle);
+  listHeader.appendChild(listHeaderContent);
+  listContent.appendChild(listHeader);
+  var listGraf = document.createElement('p');
+  var listGrafContent = document.createTextNode(data.entries[entry].notes);
+  listGraf.appendChild(listGrafContent);
+  listContent.appendChild(listGraf);
+
+  return entryContainer;
+}
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    $view[2].appendChild(entryRender(i));
+  }
+
+});
+
+// var entryContainer = document.createElement('div');
+// var orderedList = document.createElement('ol');
+// entryContainer.appendChild(orderedList);
+// var list = document.createElement('li');
+// list.setAttribute('class', 'list');
+// orderedList.appendChild(list);
+// var listImage = document.createElement('img');
+// listImage.setAttribute('class', 'note-entry-image');
+// listImage.setAttribute('src', data.entries[0].entryImage);
+// listImage.setAttribute('alt', 'note-entry');
+// list.appendChild(listImage);
+// var listContent = document.createElement('div');
+// listContent.setAttribute('class', 'note-content');
+// list.appendChild(listContent);
+// var listHeader = document.createElement('h3');
+// var listHeaderContent = document.createTextNode(data.entries[1].entryTitle);
+// listHeader.appendChild(listHeaderContent);
+// listContent.appendChild(listHeader);
+// var listGraf = document.createElement('p');
+// var listGrafContent = document.createTextNode(data.entries[1].notes);
+// listGraf.appendChild(listGrafContent);
+// // listContent.appendChild(listGraf);
+
+// var listTwo = document.createElement('li');
+// listTwo.setAttribute('class', 'list');
+// orderedList.appendChild(listTwo);
+// var listImageTwo = document.createElement('img');
+// listImageTwo.setAttribute('class', 'note-entry-image');
+// listImageTwo.setAttribute('src', data.entries[1].entryImage);
+// listImageTwo.setAttribute('alt', 'note-entry');
+// listTwo.appendChild(listImageTwo);

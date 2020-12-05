@@ -212,6 +212,37 @@ textarea {
   color: black;
 }
 
+/* Entry List */
+
+ol li {
+  list-style-type: none;
+}
+
+.note-entry-image {
+  width: 400px;
+  height: 400px;
+  margin-right: 40px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.note-content {
+  width: 50%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.note-content > h3 {
+  font-size: 36px;
+}
+
+.note-content > p {
+  font-size: 18px;
+}
+
 @media screen and (max-width: 1550px) {
   .row-one-profile {
     margin-left: 200px;
@@ -271,6 +302,10 @@ textarea {
   header > h3 {
     padding-left: 15px;
   }
+
+  .list {
+    display: inline;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -310,5 +345,17 @@ textarea {
 
   header > a {
     font-size: 12px;
+  }
+
+  .note-entry-image {
+    width: 280px;
+    height: 280px;
+    margin-left: 0;
+  }
+
+  ol { padding-left: 0; }
+
+  .note-content {
+    width: 90%;
   }
 }
