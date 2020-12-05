@@ -28,12 +28,6 @@ function profileRender(view) {
   var profile = document.createElement('div');
   profile.setAttribute('class', 'view');
   profile.setAttribute('data-view', 'profile');
-  // var header = document.createElement('header');
-  // profile.appendChild(header);
-  // var codeJournal = document.createElement('h3');
-  // var codeJournalText = document.createTextNode('Code Journal');
-  // codeJournal.appendChild(codeJournalText);
-  // header.appendChild(codeJournal);
   var rowOne = document.createElement('div');
   rowOne.setAttribute('class', 'row-one row-one-profile');
   profile.appendChild(rowOne);
@@ -159,7 +153,11 @@ document.addEventListener('click', function (event) {
     viewSwap('edit-profile');
   } else if (event.target === $link[1] && data.profile.username !== 'username') {
     viewSwap('entries');
-  } else if (event.target === $link[2] && event.target.className === 'create-button') { viewSwap('create-entry'); }
+  } else if (event.target === $link[2] && event.target.className === 'create-button') {
+    viewSwap('create-entry');
+  } else if (event.target === $link[3]) {
+    viewSwap('entries');
+  }
 });
 
 var $entryImageInput = document.querySelector('.entry-image-input');
