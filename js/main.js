@@ -200,22 +200,59 @@ function entryRender(entry) {
   orderedList.appendChild(list);
   var listImage = document.createElement('img');
   listImage.setAttribute('class', 'note-entry-image');
-  listImage.setAttribute('src', data.entries[data.entries.length - 1].entryImage);
+  listImage.setAttribute('src', data.entries[entry].entryImage);
   listImage.setAttribute('alt', 'note-entry');
   list.appendChild(listImage);
   var listContent = document.createElement('div');
   listContent.setAttribute('class', 'note-content');
   list.appendChild(listContent);
   var listHeader = document.createElement('h3');
-  var listHeaderContent = document.createTextNode(data.entries[data.entries.length - 1].entryTitle);
+  var listHeaderContent = document.createTextNode(data.entries[entry].entryTitle);
   listHeader.appendChild(listHeaderContent);
   listContent.appendChild(listHeader);
   var listGraf = document.createElement('p');
-  var listGrafContent = document.createTextNode(data.entries[data.entries.length - 1].notes);
+  var listGrafContent = document.createTextNode(data.entries[entry].notes);
   listGraf.appendChild(listGrafContent);
   listContent.appendChild(listGraf);
 
   return entryContainer;
 }
 
-entryRender();
+document.addEventListener('DOMContentLoaded', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    $view[2].appendChild(entryRender(i));
+  }
+
+});
+
+// var entryContainer = document.createElement('div');
+// var orderedList = document.createElement('ol');
+// entryContainer.appendChild(orderedList);
+// var list = document.createElement('li');
+// list.setAttribute('class', 'list');
+// orderedList.appendChild(list);
+// var listImage = document.createElement('img');
+// listImage.setAttribute('class', 'note-entry-image');
+// listImage.setAttribute('src', data.entries[0].entryImage);
+// listImage.setAttribute('alt', 'note-entry');
+// list.appendChild(listImage);
+// var listContent = document.createElement('div');
+// listContent.setAttribute('class', 'note-content');
+// list.appendChild(listContent);
+// var listHeader = document.createElement('h3');
+// var listHeaderContent = document.createTextNode(data.entries[1].entryTitle);
+// listHeader.appendChild(listHeaderContent);
+// listContent.appendChild(listHeader);
+// var listGraf = document.createElement('p');
+// var listGrafContent = document.createTextNode(data.entries[1].notes);
+// listGraf.appendChild(listGrafContent);
+// // listContent.appendChild(listGraf);
+
+// var listTwo = document.createElement('li');
+// listTwo.setAttribute('class', 'list');
+// orderedList.appendChild(listTwo);
+// var listImageTwo = document.createElement('img');
+// listImageTwo.setAttribute('class', 'note-entry-image');
+// listImageTwo.setAttribute('src', data.entries[1].entryImage);
+// listImageTwo.setAttribute('alt', 'note-entry');
+// listTwo.appendChild(listImageTwo);
